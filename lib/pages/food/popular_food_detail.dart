@@ -6,8 +6,6 @@ import 'package:my_food/widgets/expanable_text_widget.dart';
 
 import '../../utils/colors.dart';
 import '../../widgets/big_text.dart';
-import '../../widgets/icon_and_text_widget.dart';
-import '../../widgets/small_text.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -30,7 +28,7 @@ class PopularFoodDetail extends StatelessWidget {
           )),
           Positioned(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height45, child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               AppIcon(icon: Icons.arrow_back_ios_new_rounded),
               AppIcon(icon: Icons.shopping_cart_outlined)
             ],
@@ -48,7 +46,7 @@ class PopularFoodDetail extends StatelessWidget {
                 SizedBox(height: Dimensions.height20,),
                 BigText(text: "Introduce"),
                 SizedBox(height: Dimensions.height20,),
-                const Expanded(child: SingleChildScrollView(child: ExpanableTExtWidget(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at porttitor dolor, vitae faucibus orci. Nunc suscipit, ipsum ut viverra pulvinar, justo metus dapibus tortor, a convallis justo mi sit amet odio. Nam sed libero vel nunc varius consectetur. Donec viverra aliquet luctus. Duis fermentum libero ut turpis porta aliquam. Cras sit amet mauris ut erat pretium auctor. Duis bibendum vitae sapien vitae molestie. Morbi malesuada magna et dui tempus, quis bibendum tortor maximus. Maecenas efficitur dui erat, in tincidunt erat vehicula non. Morbi suscipit pulvinar dui, vel egestas risus mollis in. Maecenas maximus urna ac nulla varius condimentum. Sed in varius neque, ut condimentum quam. Cras elementum cursus nisl quis tempor.")))
+                const Expanded(child: SingleChildScrollView(child: ExpanableTextWidget(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at porttitor dolor, vitae faucibus orci. Nunc suscipit, ipsum ut viverra pulvinar, justo metus dapibus tortor, a convallis justo mi sit amet odio. Nam sed libero vel nunc varius consectetur. Donec viverra aliquet luctus. Duis fermentum libero ut turpis porta aliquam. Cras sit amet mauris ut erat pretium auctor. Duis bibendum vitae sapien vitae molestie. Morbi malesuada magna et dui tempus, quis bibendum tortor maximus. Maecenas efficitur dui erat, in tincidunt erat vehicula non. Morbi suscipit pulvinar dui, vel egestas risus mollis in. Maecenas maximus urna ac nulla varius condimentum. Sed in varius neque, ut condimentum quam. Cras elementum cursus nisl quis tempor.")))
               ],
             )
           ))

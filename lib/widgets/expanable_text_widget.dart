@@ -1,18 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_food/utils/colors.dart';
 import 'package:my_food/utils/dimensions.dart';
 import 'package:my_food/widgets/small_text.dart';
 
-class ExpanableTExtWidget extends StatefulWidget {
+class ExpanableTextWidget extends StatefulWidget {
   final String text;
-  const ExpanableTExtWidget({Key? key, required this.text}) : super(key: key);
+  const ExpanableTextWidget({Key? key, required this.text}) : super(key: key);
 
   @override
-  State<ExpanableTExtWidget> createState() => _ExpanableTExtWidgetState();
+  State<ExpanableTextWidget> createState() => _ExpanableTextWidgetState();
 }
 
-class _ExpanableTExtWidgetState extends State<ExpanableTExtWidget> {
+class _ExpanableTextWidgetState extends State<ExpanableTextWidget> {
   late String firstHalf;
   late String secondHalf;
   bool isLongText = true;

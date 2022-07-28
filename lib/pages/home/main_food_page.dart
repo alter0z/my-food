@@ -44,7 +44,14 @@ class _MainFoodPageState extends State<MainFoodPage> {
                       child:  Icon(Icons.search,color: Colors.white,size: Dimensions.icon24,),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(Dimensions.radius15),
-                          color: AppColors.mainColor
+                          color: AppColors.mainColor,
+                        boxShadow: const [
+                          BoxShadow(
+                              color: Color(0xffe8e8e8),
+                              blurRadius: 5.0,
+                              offset: Offset(0, 5)
+                          ),
+                        ]
                       ),
                     ),
                   )

@@ -8,8 +8,8 @@ import 'icon_and_text_widget.dart';
 
 class AppColumn extends StatelessWidget {
   final String text;
-  double fs;
-  AppColumn({Key? key, required this.text, this.fs = 20}) : super(key: key);
+  final double fs;
+  const AppColumn({Key? key, required this.text, this.fs = 20}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,13 @@ class AppColumn extends StatelessWidget {
         Row(
           children: [
             Wrap(
-              children: List.generate(5, (index) => Icon(Icons.star, color: AppColors.mainColor, size:15)),
+              children: List.generate(5, (index) => Icon(Icons.star, color: AppColors.mainColor, size:15, shadows: const [
+                BoxShadow(
+                    color: Color(0xffe8e8e8),
+                    blurRadius: 10.0,
+                    offset: Offset(0, 5)
+                ),
+              ],)),
             ),
             const SizedBox(width: 10,),
             SmallText(text: "4.5"),

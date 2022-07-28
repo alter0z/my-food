@@ -104,7 +104,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               ProductModel recommendedProduct = recommendedProducts.recommendedProductList[index];
             return GestureDetector(
               onTap: () {
-                Get.toNamed(AppRouter.getRecommendedFood());
+                Get.toNamed(AppRouter.getRecommendedFood(index));
               },
               child: Container(
                 margin: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, bottom: Dimensions.height20),
@@ -117,6 +117,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(Dimensions.radius20),
                           color: Colors.white24,
+                          boxShadow: const [
+                            BoxShadow(
+                                color: Color(0xffe8e8e8),
+                                blurRadius: 5.0,
+                                offset: Offset(0, 5)
+                            ),
+                          ],
                           image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
@@ -134,7 +141,14 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                               topRight: Radius.circular(Dimensions.radius20),
                               bottomRight: Radius.circular(Dimensions.radius20),
                             ),
-                            color: Colors.white
+                            color: Colors.white,
+                          boxShadow: const [
+                            BoxShadow(
+                                color: Color(0xffe8e8e8),
+                                blurRadius: 5.0,
+                                offset: Offset(0, 5)
+                            ),
+                          ]
                         ),
                         child: Padding(
                           padding: EdgeInsets.only(left: Dimensions.width10, right: Dimensions.width10),

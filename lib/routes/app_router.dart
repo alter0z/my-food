@@ -9,7 +9,7 @@ class AppRouter {
   static const String popularFood = "/popular-food";
   static getPopularFood(int index) => popularFood+"?index=$index";
   static const String recommendedFood = "/recommended-food";
-  static getRecommendedFood() => recommendedFood;
+  static getRecommendedFood(int index) => recommendedFood+"?index=$index";
 
   static List<GetPage> routes = [
     GetPage(name: initial, page: () => const MainFoodPage(), transition: Transition.leftToRight),
@@ -17,6 +17,9 @@ class AppRouter {
       var index = Get.parameters['index'];
       return PopularFoodDetail(index: int.parse(index!));
     }, transition: Transition.zoom),
-    GetPage(name: recommendedFood, page: () => const RecommendedFoodDetail(), transition: Transition.downToUp)
+    GetPage(name: recommendedFood, page: () {
+      var index = Get.parameters['index'];
+      return RecommendedFoodDetail(index: int.parse(index!));
+    }, transition: Transition.downToUp)
   ];
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_food/controllers/cart_controller.dart';
 import 'package:my_food/controllers/popular_%20product_controller.dart';
 import 'package:my_food/models/product_model.dart';
 import 'package:my_food/pages/home/main_food_page.dart';
@@ -20,7 +21,7 @@ class PopularFoodDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var popularProducts = Get.find<PopularProductController>().popularProductList[index];
-    Get.find<PopularProductController>().initItems();
+    Get.find<PopularProductController>().initItems(Get.find<CartController>());
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -115,20 +116,24 @@ class PopularFoodDetail extends StatelessWidget {
                 ),
               ),
               Container(
-                child: BigText(text: "\$${popularProducts.price!*popularProduct.quantity} | Add to cart", color: Colors.white),
+                child: GestureDetector(
+                  onTap: () {
+                    popularProduct.addItem(popularProducts);
+                  },
+                  child: BigText(text: "\$${popularProducts.price!*popularProduct.quantity} | Add to cart", color: Colors.white)),
                 padding: EdgeInsets.only(
-                    top: Dimensions.height20, bottom: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20
+                  top: Dimensions.height20, bottom: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20
                 ),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(Dimensions.radius20),
-                    color: AppColors.mainColor,
-                    boxShadow: const [
-                      BoxShadow(
-                          color: Color(0xffe8e8e8),
-                          blurRadius: 8.0,
-                          offset: Offset(0, 5)
-                      ),
-                    ]
+                  borderRadius: BorderRadius.circular(Dimensions.radius20),
+                  color: AppColors.mainColor,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0xffe8e8e8),
+                      blurRadius: 8.0,
+                      offset: Offset(0, 5)
+                    ),
+                  ]
                 ),
               )
             ],
